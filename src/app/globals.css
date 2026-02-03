@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #F8F6FF;
+  --foreground: #171717;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--source-serif-font), Georgia, serif;
+}
+
+.font-serif,
+.serif {
+  font-family: ui-serif, var(--font-pt-serif), var(--font-noto-serif), Georgia,
+    serif;
+}
+
+.font-sans,
+.sans {
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}

@@ -1,0 +1,2 @@
+# Drop project images here: chronos.jpg, innovation-screener.jpg, edav.jpg, code-search.jpg, doc-query.jpg
+# Then reference in data/projects.ts as image: "/projects/chronos.jpg"
