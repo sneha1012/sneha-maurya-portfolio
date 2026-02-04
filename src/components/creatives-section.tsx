@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { Creative } from "@/data/creatives";
+import { withBasePath } from "@/lib/base-path";
 import { useState, useEffect } from "react";
 import { X } from "lucide-react";
 
@@ -47,10 +48,10 @@ export function CreativesSection({ creatives }: { creatives: Creative[] }) {
               key={index}
               type="button"
               className="relative aspect-square rounded-xl overflow-hidden border border-[var(--foreground)]/15 hover:border-[var(--pastel-blue)]/40 transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--pastel-blue)]/50"
-              onClick={() => setLightboxImage(item.imageUrl)}
+              onClick={() => setLightboxImage(withBasePath(item.imageUrl))}
             >
               <Image
-                src={item.imageUrl}
+                src={withBasePath(item.imageUrl)}
                 alt={item.caption ?? `Photo ${index + 1}`}
                 fill
                 className="object-cover"

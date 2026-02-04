@@ -1,6 +1,7 @@
 "use client";
 
 import { Education } from "@/data/education";
+import { withBasePath } from "@/lib/base-path";
 import { useState } from "react";
 
 export function EducationEntry({ education }: { education: Education }) {
@@ -12,7 +13,7 @@ export function EducationEntry({ education }: { education: Education }) {
       {showLogo && (
         <div className="flex-shrink-0 w-14 h-14 rounded-xl overflow-hidden bg-white/80 border border-[var(--foreground)]/15 flex items-center justify-center p-1.5">
           <img
-            src={education.logoUrl}
+            src={withBasePath(education.logoUrl!)}
             alt=""
             className="w-full h-full object-contain"
             onError={() => setLogoError(true)}

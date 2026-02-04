@@ -1,6 +1,7 @@
 "use client";
 
 import { Experience } from "@/data/experience";
+import { withBasePath } from "@/lib/base-path";
 import { useState } from "react";
 
 export function ExperienceEntry({ experience }: { experience: Experience }) {
@@ -12,7 +13,7 @@ export function ExperienceEntry({ experience }: { experience: Experience }) {
       {showLogo && (
         <div className="flex-shrink-0 w-14 h-14 rounded-xl overflow-hidden bg-white/80 border border-[var(--foreground)]/15 flex items-center justify-center p-1.5">
           <img
-            src={experience.logoUrl}
+            src={withBasePath(experience.logoUrl!)}
             alt=""
             className="w-full h-full object-contain"
             onError={() => setLogoError(true)}

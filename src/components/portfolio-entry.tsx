@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
+import { withBasePath } from "@/lib/base-path";
 import { Portfolio } from "@/data/portfolio";
 
 export function PortfolioEntry({ portfolio }: { portfolio: Portfolio }) {
@@ -8,7 +9,7 @@ export function PortfolioEntry({ portfolio }: { portfolio: Portfolio }) {
       {portfolio.imageUrl && (
         <div className="w-full sm:w-2/5 min-w-[200px] h-24 sm:h-28 relative rounded-xl overflow-hidden shadow-sm border border-[var(--foreground)]/15 flex-shrink-0">
           <Image
-            src={portfolio.imageUrl}
+            src={withBasePath(portfolio.imageUrl)}
             alt={portfolio.title}
             fill
             className="object-cover object-center"

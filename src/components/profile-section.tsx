@@ -8,6 +8,7 @@ import {
   ArrowUpRight,
 } from "lucide-react";
 import { AboutMe } from "@/data/aboutme";
+import { withBasePath } from "@/lib/base-path";
 import { useState } from "react";
 
 interface ProfileSectionProps {
@@ -30,7 +31,7 @@ export function ProfileSection({ aboutMe }: ProfileSectionProps) {
         <div className="relative max-h-[45vh] md:w-[65%] aspect-[3/4] rounded-2xl overflow-hidden shadow-md border border-[var(--foreground)]/15">
           {showPhoto ? (
             <Image
-              src={aboutMe.imageUrl!}
+              src={withBasePath(aboutMe.imageUrl!)}
               alt={aboutMe.name}
               fill
               priority
@@ -89,7 +90,7 @@ export function ProfileSection({ aboutMe }: ProfileSectionProps) {
           )}
           {aboutMe.cvUrl && (
             <a
-              href={aboutMe.cvUrl}
+              href={withBasePath(aboutMe.cvUrl)}
               className="group inline-flex items-center gap-2 text-xs text-[var(--pastel-blue-dark)] hover:underline transition-colors duration-300"
               target="_blank"
               rel="noopener noreferrer"
