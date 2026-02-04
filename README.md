@@ -24,7 +24,8 @@ All content lives in **`src/data/`**:
 | `news.ts` | News items (optional; leave empty to hide) |
 | `creatives.ts` | **Creatives** — favourite photos: `{ imageUrl: "/creatives/nyc1.jpg", caption: "Brooklyn Bridge" }` |
 
-- **Photo:** Put your photo in `public/photo.jpg` and set `imageUrl: "/photo.jpg"` in `aboutme.ts`.
+- **Profile photo:** Put your image in the project as **`public/photo.jpg`** (or `photo.png`). In `src/data/aboutme.ts`, set `imageUrl: "/photo.jpg"`. If the file is missing, the site shows your initials (e.g. SM) in a pastel box until you add the photo.
+- **Logos (Columbia, SRM, workplaces):** Add logo images to **`public/logos/`** — see `public/logos/README.md` for exact filenames (`columbia.png`, `srm.png`, `ibm.png`, `nxp.png`, `columbia-business-school.png`, `metropolis.png`). If a file is missing, that logo is hidden.
 - **CV:** Put your PDF in `public/Maurya_Sneha_DS.pdf`; `cvUrl` is already set.
 - **Creatives photos:** Add images under `public/creatives/` and add entries to `creativesData` in `src/data/creatives.ts`.
 

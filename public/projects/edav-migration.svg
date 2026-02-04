@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 120" fill="none" aria-hidden="true">
+  <defs>
+    <style>.t{font:600 10px system-ui,sans-serif;fill:#2d2d2d}</style>
+  </defs>
+  <rect width="320" height="120" fill="#f8f6f0" rx="4"/>
+  <rect x="12" y="16" width="80" height="88" rx="3" stroke="#2d2d2d" stroke-width="1.2" fill="#fff"/>
+  <path d="M32 36 L52 36 L72 56 L52 76 L32 76 L22 56 Z" stroke="#2d2d2d" stroke-width="1" fill="none"/>
+  <circle cx="52" cy="56" r="8" stroke="#2d2d2d" stroke-width="1" fill="#e8f4fc"/>
+  <text x="52" y="72" class="t" text-anchor="middle">Choropleth</text>
+  <rect x="100" y="24" width="100" height="72" rx="3" stroke="#2d2d2d" stroke-width="1.2" fill="#fff"/>
+  <path d="M120 84 L140 60 L160 70 L180 44 L200 54" stroke="#2d2d2d" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <text x="150" y="98" class="t" text-anchor="middle">Ridgeline / time</text>
+  <rect x="208" y="24" width="100" height="72" rx="3" stroke="#2d2d2d" stroke-width="1.2" fill="#fff"/>
+  <rect x="228" y="44" width="16" height="36" rx="1" fill="#8FBDD9"/>
+  <rect x="248" y="32" width="16" height="48" rx="1" fill="#8FBDD9"/>
+  <rect x="268" y="52" width="16" height="28" rx="1" fill="#8FBDD9"/>
+  <text x="258" y="98" class="t" text-anchor="middle">ggplot2 · Quarto</text>
+  <text x="52" y="88" class="t" text-anchor="middle">R</text>
+</svg>

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 120" fill="none" aria-hidden="true">
+  <defs>
+    <style>.t{font:600 10px system-ui,sans-serif;fill:#2d2d2d}</style>
+  </defs>
+  <rect width="320" height="120" fill="#f8f6f0" rx="4"/>
+  <rect x="16" y="40" width="56" height="40" rx="3" stroke="#2d2d2d" stroke-width="1.2" fill="#fff"/>
+  <text x="44" y="62" class="t" text-anchor="middle">Gmail</text>
+  <text x="44" y="74" class="t" text-anchor="middle">inbox</text>
+  <path d="M76 60 H100" stroke="#2d2d2d" stroke-width="1.2" marker-end="url(#ar3)"/>
+  <rect x="104" y="32" width="72" height="56" rx="3" stroke="#2d2d2d" stroke-width="1.2" fill="#e8f4fc"/>
+  <text x="140" y="52" class="t" text-anchor="middle">Chronos Agent</text>
+  <text x="140" y="66" class="t" text-anchor="middle">Llama 3 + DPO</text>
+  <text x="140" y="80" class="t" text-anchor="middle">FastAPI</text>
+  <path d="M180 60 H204" stroke="#2d2d2d" stroke-width="1.2"/>
+  <rect x="208" y="24" width="48" height="32" rx="3" stroke="#2d2d2d" stroke-width="1.2" fill="#fff"/>
+  <text x="232" y="42" class="t" text-anchor="middle">Draft</text>
+  <rect x="208" y="64" width="48" height="32" rx="3" stroke="#2d2d2d" stroke-width="1.2" fill="#fff"/>
+  <text x="232" y="82" class="t" text-anchor="middle">Schedule</text>
+  <path d="M140 92 V100 H232 V64" stroke="#2d2d2d" stroke-width="1" fill="none"/>
+  <path d="M140 28 V20 H232 V24" stroke="#2d2d2d" stroke-width="1" fill="none"/>
+  <defs><marker id="ar3" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#2d2d2d"/></marker></defs>
+</svg>

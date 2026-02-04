@@ -26,11 +26,14 @@ const ptSerif = PT_Serif({
   weight: ["400", "700"],
 });
 
+const basePath =
+  process.env.NODE_ENV === "production" ? "/sneha-maurya-portfolio" : "";
+
 export const metadata: Metadata = {
   title: customMetadata.title || aboutMe.name,
   description: customMetadata.description || aboutMe.description,
   icons: {
-    icon: "/favicon.ico",
+    icon: `${basePath}/favicon.ico`,
   },
 };
 
@@ -45,28 +48,28 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${notoSerif.variable} ${ptSerif.variable} antialiased`}
       >
         <main className="">{children}</main>
-        <footer className="border-t border-zinc-200 bg-[#F8F6FF]">
+        <footer className="border-t border-[var(--foreground)]/10 bg-[var(--foreground)]/[0.02]">
           <div className="flex flex-row mx-auto max-w-7xl px-6 py-12 md:flex md:items-start md:justify-between">
-            <div className="mb-4 text-sm text-zinc-600">
+            <div className="mb-4 text-sm text-[var(--foreground)]/80">
               <p>© {new Date().getFullYear()} {aboutMe.name}.</p>
               {aboutMe.secretDescription && (
-                <p className="text-xs text-zinc-500 mt-4">
+                <p className="text-xs mt-4 opacity-80">
                   {aboutMe.secretDescription}
                 </p>
               )}
             </div>
             <div className="mb-4">
-              <p className="text-sm text-zinc-500">
+              <p className="text-sm opacity-70">
                 Built with{" "}
                 <a
                   href="https://github.com/tovacinni/research-website-template"
-                  className="underline hover:text-zinc-800 transition-colors"
+                  className="underline hover:opacity-100 transition-colors"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   research-website-template
                 </a>
-                , customized for Sneha.
+                .
               </p>
             </div>
           </div>

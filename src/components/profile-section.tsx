@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import {
   Github,
@@ -6,50 +8,61 @@ import {
   ArrowUpRight,
 } from "lucide-react";
 import { AboutMe } from "@/data/aboutme";
+import { useState } from "react";
 
 interface ProfileSectionProps {
   aboutMe: AboutMe;
 }
 
 export function ProfileSection({ aboutMe }: ProfileSectionProps) {
-  if (!aboutMe) {
-    return null;
-  }
+  const [photoError, setPhotoError] = useState(false);
+  const showPhoto = aboutMe.imageUrl && !photoError;
+  const initials = aboutMe.name
+    .split(" ")
+    .map((n) => n[0])
+    .join("")
+    .slice(0, 2)
+    .toUpperCase();
 
   return (
     <div className="md:sticky top-12 flex flex-row-reverse md:flex-col gap-4 md:space-y-8">
-      {aboutMe.imageUrl && (
-        <div className="w-1/3 md:w-full flex-shrink-0">
-          <div className="relative max-h-[45vh] md:w-[65%] aspect-[3/4]">
+      <div className="w-1/3 md:w-full flex-shrink-0">
+        <div className="relative max-h-[45vh] md:w-[65%] aspect-[3/4] rounded-2xl overflow-hidden shadow-md border border-[var(--foreground)]/15">
+          {showPhoto ? (
             <Image
-              src={aboutMe.imageUrl}
+              src={aboutMe.imageUrl!}
               alt={aboutMe.name}
               fill
               priority
-              className="object-cover rounded-xl"
-              onError={(e) => {
-                e.currentTarget.style.display = "none";
-              }}
+              className="object-cover object-center"
+              onError={() => setPhotoError(true)}
             />
-          </div>
+          ) : (
+            <div
+              className="w-full h-full flex items-center justify-center text-[var(--foreground)]/50 font-serif text-4xl font-light bg-[var(--foreground)]/5"
+              aria-hidden
+            >
+              {initials}
+            </div>
+          )}
         </div>
-      )}
+      </div>
       <div className="w-2/3 md:w-full">
-        <h1 className="font-serif text-3xl font-light tracking-wide mb-3">
+        <h1 className="font-serif text-3xl font-light tracking-wide mb-3 text-[var(--pastel-blue-dark)]">
           {aboutMe.name}
         </h1>
         {aboutMe.altName && (
-          <p className="text-zinc-600 text-md leading-relaxed tracking-wide mb-6">
+          <p className="text-[var(--foreground)]/80 text-md leading-relaxed tracking-wide mb-6">
             {aboutMe.altName}
           </p>
         )}
-        <p className="text-zinc-600 text-xs leading-relaxed tracking-wide uppercase mb-6">
+        <p className="text-[var(--pastel-blue-dark)] text-xs leading-relaxed tracking-wide uppercase mb-6">
           {aboutMe.title}
           <br />
           {aboutMe.institutionUrl ? (
             <a
               href={aboutMe.institutionUrl}
-              className="hover:text-zinc-900 transition-colors duration-300"
+              className="hover:underline transition-colors duration-300"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -63,7 +76,7 @@ export function ProfileSection({ aboutMe }: ProfileSectionProps) {
           {aboutMe.blogUrl && (
             <a
               href={aboutMe.blogUrl}
-              className="group inline-flex items-center gap-2 text-xs text-zinc-500 hover:text-zinc-900 transition-colors duration-300"
+              className="group inline-flex items-center gap-2 text-xs text-[var(--pastel-blue-dark)] hover:underline transition-colors duration-300"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -77,7 +90,7 @@ export function ProfileSection({ aboutMe }: ProfileSectionProps) {
           {aboutMe.cvUrl && (
             <a
               href={aboutMe.cvUrl}
-              className="group inline-flex items-center gap-2 text-xs text-zinc-500 hover:text-zinc-900 transition-colors duration-300"
+              className="group inline-flex items-center gap-2 text-xs text-[var(--pastel-blue-dark)] hover:underline transition-colors duration-300"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -91,7 +104,7 @@ export function ProfileSection({ aboutMe }: ProfileSectionProps) {
           {aboutMe.creativesUrl && (
             <a
               href={aboutMe.creativesUrl}
-              className="group inline-flex items-center gap-2 text-xs text-zinc-500 hover:text-zinc-900 transition-colors duration-300"
+              className="group inline-flex items-center gap-2 text-xs text-[var(--pastel-blue-dark)] hover:underline transition-colors duration-300"
             >
               <ArrowUpRight
                 size={12}
@@ -101,10 +114,10 @@ export function ProfileSection({ aboutMe }: ProfileSectionProps) {
             </a>
           )}
         </div>
-        <div className="space-y-2">
+        <div className="space-y-2 text-[var(--pastel-blue-dark)]">
           <a
             href={`mailto:${aboutMe.email}`}
-            className="inline-flex items-center gap-2 text-sm text-zinc-600 hover:text-zinc-900 transition-colors"
+            className="inline-flex items-center gap-2 text-sm hover:underline transition-colors"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -116,7 +129,7 @@ export function ProfileSection({ aboutMe }: ProfileSectionProps) {
               <br />
               <a
                 href={`https://github.com/${aboutMe.githubUsername}`}
-                className="inline-flex items-center gap-2 text-sm text-zinc-600 hover:text-zinc-900 transition-colors"
+                className="inline-flex items-center gap-2 text-sm hover:underline transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -130,7 +143,7 @@ export function ProfileSection({ aboutMe }: ProfileSectionProps) {
               <br />
               <a
                 href={`https://www.linkedin.com/in/${aboutMe.linkedinUsername}`}
-                className="inline-flex items-center gap-2 text-sm text-zinc-600 hover:text-zinc-900 transition-colors"
+                className="inline-flex items-center gap-2 text-sm hover:underline transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"
               >

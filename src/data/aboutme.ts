@@ -23,12 +23,11 @@ export const aboutMe: AboutMe = {
   title: "Data Scientist & ML Engineer",
   institution: "Columbia University",
   description:
-    "I'm a Data Scientist and ML Engineer building intelligent systems with LLMs and neural networks. MS in Data Science from Columbia; experience at IBM, NXP Semiconductors, Columbia Business School, and Metropolis Healthcare. I work on everything from DPO-tuned email agents to production ML pipelines and exploratory data viz.",
+    "Hi! I'm Sneha, a recent grad from Columbia's MS in Data Science. I've worked on AI for code at IBM, manufacturing analytics at NXP, and multimodal RAG and healthcare NLP at Columbia. I'm involved in pre- and post-training, eval, and vertical agents. I studied high-performance ML, deep learning for NLP, and agentic systems. I'm interested in AI embedded in existing systems as reasoning engineers trust, not as a replacement layer. I care about observability over agent behavior, organizational memory, and tools that augment rather than just automate.",
   email: "sm5755@columbia.edu",
-  // Add your photo: drop in public/photo.jpg and set imageUrl: "/photo.jpg"
-  imageUrl: undefined as string | undefined,
-  blogUrl: "https://", // Add your blog when you publish
-  cvUrl: "/Maurya_Sneha_DS.pdf",
+  imageUrl: "/logos/WhatsApp%20Image%202026-02-03%20at%2020.28.16.jpeg",
+  blogUrl: "https://",
+  cvUrl: "/projects/Maurya%20Sneha.pdf",
   githubUsername: "sneha1012",
   linkedinUsername: "snehamaurya10",
   institutionUrl: "https://www.columbia.edu",

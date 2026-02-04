@@ -3,8 +3,16 @@
 @tailwind utilities;
 
 :root {
-  --background: #F8F6FF;
-  --foreground: #171717;
+  --background: #F5EBB8;
+  --foreground: #2d2d2d;
+  --butter: #E8D88C;
+  --butter-light: #F5EBB8;
+  --butter-dark: #D4C76A;
+  --pastel-blue: #5A8AA5;
+  --pastel-blue-light: #6B9BB8;
+  --pastel-blue-dark: #4a7a95;
+  --accent: #5A8AA5;
+  --page-tint: #F5EBB8;
 }
 
 body {
@@ -22,4 +30,32 @@ body {
 .font-sans,
 .sans {
   font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+/* Snoopy run animation - moves with scroll feel */
+@keyframes snoopy-bounce {
+  0%, 100% { transform: translateY(0) scaleX(1); }
+  50% { transform: translateY(-6px) scaleX(1); }
+}
+
+@keyframes snoopy-enter {
+  from { transform: translateX(-80px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.snoopy-enter {
+  animation: snoopy-enter 1.2s ease-out forwards;
+}
+
+.snoopy-bounce {
+  animation: snoopy-bounce 2.5s ease-in-out infinite;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out forwards;
 }

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 120" fill="none" aria-hidden="true">
+  <defs>
+    <style>.t{font:600 10px system-ui,sans-serif;fill:#2d2d2d}</style>
+  </defs>
+  <rect width="320" height="120" fill="#f8f6f0" rx="4"/>
+  <rect x="12" y="24" width="52" height="32" rx="3" stroke="#2d2d2d" stroke-width="1.2" fill="#fff"/>
+  <text x="38" y="44" class="t" text-anchor="middle">Query</text>
+  <path d="M68 40 H88" stroke="#2d2d2d" stroke-width="1.2" marker-end="url(#ar)"/>
+  <rect x="92" y="24" width="56" height="32" rx="3" stroke="#2d2d2d" stroke-width="1.2" fill="#e8f4fc"/>
+  <text x="120" y="44" class="t" text-anchor="middle">Retriever</text>
+  <path d="M152 40 H172" stroke="#2d2d2d" stroke-width="1.2"/>
+  <rect x="176" y="24" width="56" height="32" rx="3" stroke="#2d2d2d" stroke-width="1.2" fill="#fff"/>
+  <text x="204" y="44" class="t" text-anchor="middle">Context</text>
+  <path d="M232 40 H252" stroke="#2d2d2d" stroke-width="1.2"/>
+  <rect x="256" y="24" width="52" height="32" rx="3" stroke="#2d2d2d" stroke-width="1.2" fill="#e8f4fc"/>
+  <text x="282" y="44" class="t" text-anchor="middle">LLM</text>
+  <path d="M282 60 V76 H38 V60" stroke="#2d2d2d" stroke-width="1.2" fill="none"/>
+  <rect x="12" y="76" width="52" height="28" rx="3" stroke="#2d2d2d" stroke-width="1.2" fill="#d4edda"/>
+  <text x="38" y="94" class="t" text-anchor="middle">Answer</text>
+  <defs><marker id="ar" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#2d2d2d"/></marker></defs>
+</svg>
