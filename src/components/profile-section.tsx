@@ -9,7 +9,7 @@ import {
 } from "lucide-react";
 import { AboutMe } from "@/data/aboutme";
 import { withBasePath } from "@/lib/base-path";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 interface ProfileSectionProps {
   aboutMe: AboutMe;
@@ -17,7 +17,18 @@ interface ProfileSectionProps {
 
 export function ProfileSection({ aboutMe }: ProfileSectionProps) {
   const [photoError, setPhotoError] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+  const [showCat, setShowCat] = useState(false);
   const showPhoto = aboutMe.imageUrl && !photoError;
+
+  // Auto-cycle: show cat for 2s every 5s
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setShowCat(true);
+      setTimeout(() => setShowCat(false), 2000);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
   const initials = aboutMe.name
     .split(" ")
     .map((n) => n[0])
@@ -28,16 +39,28 @@ export function ProfileSection({ aboutMe }: ProfileSectionProps) {
   return (
     <div className="md:sticky top-12 flex flex-row-reverse md:flex-col gap-4 md:space-y-8">
       <div className="w-1/3 md:w-full flex-shrink-0">
-        <div className="relative max-h-[45vh] md:w-[65%] aspect-[3/4] rounded-2xl overflow-hidden shadow-md border border-[var(--foreground)]/15">
+        <div
+          className="relative max-h-[45vh] md:w-[65%] aspect-[3/4] rounded-2xl overflow-hidden shadow-md border border-[var(--foreground)]/15 cursor-pointer"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
           {showPhoto ? (
-            <Image
-              src={withBasePath(aboutMe.imageUrl!)}
-              alt={aboutMe.name}
-              fill
-              priority
-              className="object-cover object-center"
-              onError={() => setPhotoError(true)}
-            />
+            <>
+              <Image
+                src={withBasePath(aboutMe.imageUrl!)}
+                alt={aboutMe.name}
+                fill
+                priority
+                className={`object-cover object-center transition-opacity duration-700 ${showCat || isHovered ? "opacity-0" : "opacity-100"}`}
+                onError={() => setPhotoError(true)}
+              />
+              <Image
+                src={withBasePath("/logos/cat.jpeg")}
+                alt="surprise!"
+                fill
+                className={`object-cover object-center transition-opacity duration-700 ${showCat || isHovered ? "opacity-100" : "opacity-0"}`}
+              />
+            </>
           ) : (
             <div
               className="w-full h-full flex items-center justify-center text-[var(--foreground)]/50 font-serif text-4xl font-light bg-[var(--foreground)]/5"

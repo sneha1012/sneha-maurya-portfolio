@@ -5,7 +5,7 @@ import { Portfolio } from "@/data/portfolio";
 
 export function PortfolioEntry({ portfolio }: { portfolio: Portfolio }) {
   return (
-    <div className="flex flex-col sm:flex-row gap-6 p-4 rounded-xl border border-[var(--foreground)]/10 hover:border-[var(--foreground)]/20 transition-colors">
+    <div className="project-glow flex flex-col sm:flex-row gap-6 p-4 rounded-xl border border-[var(--foreground)]/10 hover:border-[var(--foreground)]/20 transition-colors">
       {portfolio.imageUrl && (
         <div className="w-full sm:w-2/5 min-w-[200px] h-24 sm:h-28 relative rounded-xl overflow-hidden shadow-sm border border-[var(--foreground)]/15 flex-shrink-0">
           <Image
