@@ -12,6 +12,15 @@ export interface Experience {
 
 export const experienceData: Experience[] = [
   {
+    date: "Jan 2026 — Mar 2026",
+    title: "Founding Researcher",
+    company: "Rubric (YC W26)",
+    description:
+      "Led development of WHB, a clinical LLM evaluation framework benchmarking 23 frontier and open-source models on expert-crafted contraception scenarios. Designed 23-criterion scoring rubric, built parallelized LLM-as-judge pipeline with multi-judge inter-rater reliability, and first-authored the arXiv preprint.",
+    companyUrl: "https://therubric.ai/",
+    logoUrl: "/logos/rubric-ai.svg",
+  },
+  {
     date: "Sep 2025 — Jan 2026",
     title: "Data Scientist",
     company: "IBM",
