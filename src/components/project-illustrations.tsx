@@ -53,6 +53,31 @@ export function IlloCodeSearch({ className }: { className?: string }) {
   );
 }
 
+export function IlloWHB({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 80 80" className={className} aria-hidden>
+      <rect x="14" y="20" width="52" height="40" rx="6" fill={fillLight} stroke={stroke} strokeWidth="1.2" />
+      <rect x="20" y="28" width="8" height="20" rx="2" fill={fill} stroke={stroke} strokeWidth="0.8" />
+      <rect x="32" y="32" width="8" height="16" rx="2" fill={fill} stroke={stroke} strokeWidth="0.8" />
+      <rect x="44" y="26" width="8" height="22" rx="2" fill={fill} stroke={stroke} strokeWidth="0.8" />
+      <rect x="56" y="34" width="6" height="14" rx="2" fill={fill} stroke={stroke} strokeWidth="0.8" />
+      <circle cx="58" cy="22" r="6" fill={fill} stroke={stroke} strokeWidth="1" />
+      <path d="M56 22 L58 24 L61 20" stroke="white" strokeWidth="1.2" fill="none" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+export function IlloProspector({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 80 80" className={className} aria-hidden>
+      <circle cx="36" cy="36" r="20" fill={fillLight} stroke={stroke} strokeWidth="1.2" />
+      <path d="M50 50 L64 64" stroke={stroke} strokeWidth="3" strokeLinecap="round" />
+      <circle cx="36" cy="36" r="10" fill={fill} stroke={stroke} strokeWidth="1" opacity="0.7" />
+      <path d="M30 36 L34 40 L42 32" stroke="white" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
 export function IlloDocQuery({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 80 80" className={className} aria-hidden>
@@ -67,6 +92,8 @@ export function IlloDocQuery({ className }: { className?: string }) {
 import type { ProjectIllustrationKey } from "@/data/portfolio";
 
 const illustrations: Record<ProjectIllustrationKey, React.ComponentType<{ className?: string }>> = {
+  whb: IlloWHB,
+  prospector: IlloProspector,
   chronos: IlloChronos,
   "innovation-screener": IlloInnovation,
   "edav-migration": IlloMigration,
