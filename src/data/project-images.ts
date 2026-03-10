@@ -5,6 +5,8 @@
 
 /** All project image filenames in public/projects/ */
 export const projectImageFiles = [
+  "whb-dashboard.png",
+  "prospector-dashboard.png",
   "chronos.svg",
   "Innovation screener.png",
   "R ggplot.png",
@@ -14,6 +16,8 @@ export const projectImageFiles = [
 
 /** Map from project key to filename. Keep in sync with portfolio illustration keys. */
 export const projectImageByKey: Record<string, string> = {
+  whb: "whb-dashboard.png",
+  prospector: "prospector-dashboard.png",
   chronos: "chronos.svg",
   "innovation-screener": "Innovation screener.png",
   "edav-migration": "R ggplot.png",

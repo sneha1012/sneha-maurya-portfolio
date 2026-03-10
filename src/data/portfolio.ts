@@ -1,6 +1,8 @@
 import { getProjectImageUrl } from "./project-images";
 
 export type ProjectIllustrationKey =
+  | "whb"
+  | "prospector"
   | "chronos"
   | "innovation-screener"
   | "edav-migration"
@@ -19,6 +21,24 @@ export interface Portfolio {
 }
 
 export const portfolioData: Portfolio[] = [
+  {
+    title: "Women's Health Benchmark (WHB)",
+    description:
+      "End-to-end evaluation framework for clinical AI: 47 expert scenarios, 23 models, 23-criterion ordinal rubric, parallelized scoring with ThreadPoolExecutor, and Cohen's kappa IRR across three independent LLM judges. Ships with interactive leaderboard dashboard and 7 publication figures.",
+    technologies: ["Python", "OpenRouter API", "Claude Sonnet 4", "LLM-as-Judge", "ThreadPoolExecutor"],
+    imageUrl: getProjectImageUrl("whb"),
+    codeUrl: "https://github.com/The-Rubric-AI/womens-health-benchmark",
+    illustration: "whb",
+  },
+  {
+    title: "ProspectorAI",
+    description:
+      "AI-powered B2B sales intelligence platform. Scrapes contractor directories via Playwright API interception, stores in SQLite with idempotent UPSERT, generates LLM-enriched lead scoring, and serves via FastAPI with interactive dashboard.",
+    technologies: ["Python", "FastAPI", "Playwright", "SQLite", "OpenAI", "Docker"],
+    imageUrl: getProjectImageUrl("prospector"),
+    codeUrl: "https://github.com/sneha1012/prospector-ai",
+    illustration: "prospector",
+  },
   {
     title: "Chronos: Autonomous Email Agent",
     description:
