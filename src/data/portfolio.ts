@@ -27,7 +27,7 @@ export const portfolioData: Portfolio[] = [
       "End-to-end evaluation framework for clinical AI: 47 expert scenarios, 23 models, 23-criterion ordinal rubric, parallelized scoring with ThreadPoolExecutor, and Cohen's kappa IRR across three independent LLM judges. Ships with interactive leaderboard dashboard and 7 publication figures.",
     technologies: ["Python", "OpenRouter API", "Claude Sonnet 4", "LLM-as-Judge", "ThreadPoolExecutor"],
     imageUrl: getProjectImageUrl("whb"),
-    codeUrl: "https://github.com/The-Rubric-AI/womens-health-benchmark",
+    codeUrl: "https://github.com/sneha1012/womens-health-benchmark",
     illustration: "whb",
   },
   {
